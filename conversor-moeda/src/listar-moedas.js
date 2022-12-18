@@ -1,5 +1,6 @@
 import React from "react";
 
+//Componente para renderizar Moedas;
 export default function ListarMoedas(){
     const MOEDAS = [ //http://fixer.io
     { "sigla": "AUD", "descricao": "Dólar australiano" },
@@ -35,6 +36,9 @@ export default function ListarMoedas(){
     { "sigla": "USD", "descricao": "Dólar dos Estados Unidos" },
     { "sigla": "ZAR", "descricao": "Rand África do Sul" }
 ];
+
+
+// colocando em order albetica os nomes das moedas.
 function compare (moeda1,moeda2){
     if(moeda1.descricao < moeda2.descricao){
         return -1
@@ -45,6 +49,7 @@ function compare (moeda1,moeda2){
     }
 }
 
+// returnando as moedas em forma de opcões que irão ser selecionadas em um Select no App.js.
 return MOEDAS.sort(compare).map(
     moeda=> <option value={moeda.sigla} key={moeda.sigla} >
         {moeda.descricao}
